@@ -1,0 +1,14 @@
+{
+  "name": "Docker Compose HTML Dev",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ritwickdey.LiveServer"
+      ]
+    }
+  },
+  "forwardPorts": [8080]
+}
