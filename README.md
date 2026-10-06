@@ -175,6 +175,27 @@ npm install -g http-server
 http-server app -p 8080
 ブラウザで http://localhost:8080 にアクセスすれば、「Hello World!」が表示されるはず！ショートカットを「一切使わない」から「コマンドパレット（Ctrl+Shift+P）はOK」にするだけで、Dev Containerの面倒なURI指定をスキップできるから、このやり方が一番実用的でラクだよ。試してみてね！
 
+
+# error
+
+1. サーバ側（またはVSCodeのターミナル）でDocker Composeを直接起動する
+プロジェクトのルートディレクトリ（training_devcontainer_html）にいる状態で、以下のコマンドを実行してコンテナをバックグラウンドでビルド＆起動する。
+
+Bash
+docker compose -f .devcontainer/docker-compose.yml up -d
+(※これでコンテナ自体はバックグラウンドで元気に動き始める)
+
+2. 起動したコンテナにVSCodeでアタッチする
+コンテナが動いたら、次の手順で接続するよ。
+
+キーボードで Ctrl + Shift + P を押してコマンドパレットを開く。
+
+以下のように入力して選択する：
+
+Plaintext
+Dev Containers: Attach to Running Container...
+実行すると、現在動いているコンテナの一覧が表示されるので、さっき作った web コンテナ（またはプロジェクト名のコンテナ）を選択する。
+
 ---
 
 # devcontainer の一般解説
