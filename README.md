@@ -165,6 +165,16 @@ http-server app -p 8080
 * **確認方法**: 
   画面に「Hello World!」が表示される．
 
+
+純粋なコマンドライン（CLI）だけでやろうとするとリモートURIの指定などが少しややこしくなるけれど、コマンドパレットを1回挟むだけで、GUIのボタンを一切使わずにスムーズにコンテナへ飛び込める。コマンドパレットを使った、最もスマートで確実な起動・接続手順をまとめたよ。コマンドパレットを使った Dev Container 起動手順すでに手元に .devcontainer/ や app/index.html が揃っている状態からスタートするね。1. いつも通りプロジェクトを開くBashcode .
+(※この時点ではまだホスト側（SSH: NEMO）の環境   2. コマンドパレットを開くキーボードで Ctrl + Shift + P を押す。3. コンテナ起動コマンドを打つコマンドパレットの入力欄に、以下のように打ち込む。PlaintextDev Containers: Reopen in Container
+（「reopen」と打てば候補に出てくるので、矢印キーで選んで Enter）これだけで、裏側で自動的に Docker Compose がビルド・起動し、VSCodeがコンテナ内に接続（アタッチ）してくれるよ！画面の左下が Dev Container: Docker Compose HTML Dev のように切り替わったら大成功。4. コンテナ内でサーバーを起動するコンテナ内のターミナル（VSCode内で開いたターミナル）で、いつも通り以下を実行する。Bash# 初回のみ（グローバルインストール）
+npm install -g http-server
+
+# サーバー起動
+http-server app -p 8080
+ブラウザで http://localhost:8080 にアクセスすれば、「Hello World!」が表示されるはず！ショートカットを「一切使わない」から「コマンドパレット（Ctrl+Shift+P）はOK」にするだけで、Dev Containerの面倒なURI指定をスキップできるから、このやり方が一番実用的でラクだよ。試してみてね！
+
 ---
 
 # devcontainer の一般解説
